@@ -13,6 +13,68 @@
 | Canva: Zincutec Instagram | `FAHSlXE3Mxs` |
 | Canva: Katalog-Design (Referenz für Stil) | `DAHRCVv3px8` |
 
+## 0. Bildquelle — `00_LOUISVI_FOLDERSTRUCTURE` (primär)
+
+**Das ist die wichtigste Bildquelle. Immer zuerst hier suchen, nicht auf der Shopify-CDN.**
+
+Wurzel: `1DjKwaiyERdvjy-rpCRgw0gl8fb3FVX3p` (liegt in „VIDEOS LOUIS XI", Eigentümer kontakt@zincutec.eu)
+
+25 nummerierte Produktordner. Pro Produkt drei Unterordner-Typen:
+
+| Präfix | Bedeutung | Wert für Instagram |
+|---|---|---|
+| `1. RD <PRODUKT>` | **Renderings** — CGI, teils auch Rendering-Videos (.mp4) | Stark im Bildaufbau, aber CGI. Kostet Punkte bei Materialwahrheit. |
+| `2. S <PRODUKT>` | **Shooting** — echte Fotografie (`DSC*.jpg`, `<PRODUKT> 1–45.jpg`), bis 26 MB | **Erste Wahl.** Echtes Licht, echte Patina, echte Schatten. |
+| `3. SH <PRODUKT> <FINISH>` | Weiteres Shooting, nach Finish getrennt | Zweite Wahl, gut für Finish-spezifische Posts. |
+
+Dazu je Produkt ein `.docx` mit dem Produkttext (z. B. „Kinkō Bücherregal Text.docx").
+
+**Bekannte Ordner-IDs**
+
+| Produkt | ID | Produkt | ID |
+|---|---|---|---|
+| 1. ZEN DINING | `1S6xTOYgWwM2Qfob9brfitPX1As4czqyj` | 13. BOOKSHELF INFINITY | `1eh-XMm1TIPmE7TZaWyJTknAn67h0qKIs` |
+| 2. PYRAMID TABLE | `1t9la7k2pU1ozypUX1BqtCcOUkndfttoI` | 14. JIKU | `1kuiiTuYUU7xIxg_3oS9OFfniNGW9VUJ8` |
+| 3. SAMURAI TABLE | `12uD0jVPxv2RmwOb43zY73QRkPDPJXHF9` | 15. ORIGAMI | `1VyEmtX7aTYnjEKRzJb35dI7Yg8doZZLT` |
+| 4. SATORI TABLE | `14IjETXgJKVgmCu2MwFk1gHCEeGK6-ipr` | 16. ZEN BENCH | `1VTR0WHZwXQUhHTmWdqjTsCdazcbYzdlp` |
+| 5. ZEN COFFEE TABLE | `1IJOA--xWwa0PK522J7VrDi5J6OtX1IFR` | 17. T-STOOL | `1OkCOJhivapUuWG-zbrQlNFi0ryiW-_tl` |
+| 6. ELYSIAN | `1B1Ecv7dcrwFirZCG7COv3W7at-ivPBht` | 18. TUKKON CHAIR | `1fPT-HUEhIBb7-VPc4UbP5PI00CUiLtlf` |
+| 6. TUKKON | `1FNCKXm7R7GW9hMkCprcjuJy_C_4iXaPL` | 19. REFLEXION | `1lLDFIcXJEGBFeOuVLMU4O1OzD9zVIwM2` |
+| 7. KANJI | `18nHeXfpSMSUqMAnxhA15HDotqNiKVR5o` | 20. THE ROYAL GAME | `1gztmQ1akXW7IXP1_S7Inm-ybQNfwWiWk` |
+| 8. OYAKATA | `1zL6-W8-IsmRBZFiZHbchwKCWJj8Nbmun` | 21. YORU | `1hx7K1qRkjrZQF6_O56rvW_28J41OBOOk` |
+| 9. KINKO | `1ZdqEPM0VOUns_z1VgYjpscncdCTIEmH7` | 22. TUKKON CONSOLE | `1vSO05H3gs_Fsjyf1v3yvihPazm4jzl2e` |
+| 10. TAISHO | `19GeMUSDOB3cZzrmvw9CUukCjX2Ol9KtR` | 23. ZEN CONSOLE | `1HpJsEptY5tImdMImY62ph_fGWtSYBCqT` |
+| 11. CHOWA | `1oSY6W8k8R40n4ewKwMO-l56GtmadT3kb` | ARCHIVE PRODUCTS | `1H3HOe_h0CikXjTaF6_QvXjxW5Z8LSaY7` |
+| 12. YUGEN | `1MRRkeZPernsE_Lk2EikgAcE6IiYgtTMm` | | |
+
+Fehlt ein Produkt in der Tabelle: mit `search_files` und `parentId = '1DjKwaiyERdvjy-rpCRgw0gl8fb3FVX3p'` auflisten.
+
+### Bilder wirklich ansehen — der Pflichtschritt
+
+**Nie ein Bild allein nach dem Dateinamen wählen.** Der Agent muss es sehen, sonst kann er die Rubrik-Kriterien Bild, Licht und Komposition nicht bewerten.
+
+`download_file_content` sprengt bei diesen Dateigrößen den Kontext und wird in eine Zwischendatei umgeleitet. **Das ist kein Fehler — das ist der vorgesehene Weg.** Von dort dekodieren, ohne den Base64-String je in den Kontext zu holen:
+
+```python
+import json, base64
+from PIL import Image
+d = json.load(open('<pfad-zur-zwischendatei>.txt'))
+open('bild.jpg','wb').write(base64.b64decode(d['content']))
+im = Image.open('bild.jpg')          # Originalmaß prüfen
+im.thumbnail((900,900))               # verkleinern, sonst teuer
+im.save('bild_v.jpg', quality=88)
+```
+
+Dann `bild_v.jpg` mit `Read` ansehen und bewerten. Pillow ist ggf. per `pip install Pillow` nachzuinstallieren; `ffmpeg` ist **nicht** verfügbar.
+
+Zwei bis vier Kandidaten pro Post ansehen, dann entscheiden. Die Wahl mit Begründung in die Caption-Datei.
+
+### Canva-Einschränkung bei Drive-Bildern
+
+`upload-asset-from-url` braucht eine **öffentlich** erreichbare URL. Drive-Links sind das nicht, auch nicht als `uc?export=download`. Dateien aus diesem Ordner lassen sich daher **nicht** automatisch nach Canva bringen.
+
+Konsequenz: Der Agent wählt und begründet das Bild, legt es in den Drive-Tagesordner, und nennt Louis **Ordner und Dateiname exakt**, damit er es in Canva ins bestehende Bildfeld zieht — dieselbe Handbewegung wie in seinem Katalog-Workflow. Kein Ersatzbild von der CDN einsetzen, nur weil das automatisierbar wäre.
+
 ## 1. Produktdaten live holen
 
 ```bash
@@ -87,17 +149,20 @@ Bild herunterladen, dann `mcp__Google_Drive__create_file` mit `base64Content`, p
 
 ## 6. Melden
 
-**Telegram** (bevorzugt) — `mcp__Zapier__execute_zapier_write_action`
+**Slack ist der Meldekanal** — Channel `#zincutec-graphic-design-chat`, ID `C0BQN0X6SQK`.
 
 ```json
-{
-  "selected_api": "TelegramCLIAPI",
-  "action": "send_message",
-  "params": { "chat_id": "<Chat>", "text": "<Report>", "format": "Plain Text" }
-}
+{ "channel_id": "C0BQN0X6SQK", "message": "<Report im Format aus der SKILL.md>" }
 ```
 
-Telegram muss einmalig verbunden werden (siehe `state/content-log.md`, Abschnitt Setup). Solange keine Verbindung besteht: Report über den Push/E-Mail-Kanal des Routine-Laufs ausgeben und den Blocker im Log vermerken.
+via `mcp__Slack__slack_send_message`. Markdown wird unterstützt (`**fett**`, Tabellen, Codeblöcke). Louis antwortet dort — vor jedem Lauf den Channel mit `slack_read_channel` lesen und offene Anweisungen aufnehmen.
+
+**Rückfallebenen**, in dieser Reihenfolge:
+1. Slack (`C0BQN0X6SQK`)
+2. Telegram — Zapier-App aktiviert, Verbindung offen. Nach Verbindung `chat_id` in `state/content-log.md` eintragen.
+3. Push/E-Mail-Benachrichtigung des Routine-Laufs.
+
+Wenn keiner erreichbar ist: Report in den Tagesordner in Drive schreiben und den Blocker im Log vermerken.
 
 **Kein Instagram-Publishing.** Der Agent hat bewusst keinen Zugriff auf `InstagramBusinessCLIAPI`. Das ist Absicht, kein fehlendes Setup — nicht „nachrüsten", ohne dass Louis es ausdrücklich verlangt.
 

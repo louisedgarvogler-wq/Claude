@@ -10,7 +10,8 @@ Regel: Was in den letzten 21 Tagen lief, wird nicht wiederholt — weder Produkt
 | Drive-Queue | ✅ angelegt — `1_bI4QKyxkM0710ZWsYA0PtO2nb4Oset1` |
 | Canva-Ordner | ✅ angelegt — `FAHSlXE3Mxs` |
 | Tages-Routine | ✅ aktiv, 07:12 CEST |
-| Telegram | ⏳ Zapier-App aktiviert, **Verbindung offen** — Louis muss den Auth-Link einmalig bestätigen, danach hier den `chat_id` eintragen |
+| Slack | ✅ `#zincutec-graphic-design-chat` — `C0BQN0X6SQK`. Primärer Meldekanal. Vor jedem Lauf mitlesen. |
+| Telegram | ⏳ Rückfallebene. Zapier-App aktiviert, Verbindung offen — Auth-Link einmalig bestätigen, danach `chat_id` hier eintragen |
 | **4:5-Master-Design** | ⛔ **fehlt — größter Blocker.** Louis muss einmalig ein Master von Hand bauen (Helvetica, echtes Logo). Danach dupliziert der Agent nur noch. Begründung in `references/design-system.md`. |
 | Routine-Connectors | ⚠️ Routine-Sessions erben keine Drive-/Canva-/Zapier-Tools (Organisationsbeschränkung). Der Tageslauf arbeitet dann im Degraded-Modus und legt im Repo ab. |
 | Instagram-Publishing | ⛔ bewusst nicht eingerichtet — Agent legt nur ab |
@@ -19,7 +20,8 @@ Regel: Was in den letzten 21 Tagen lief, wird nicht wiederholt — weder Produkt
 
 | Datum | Produkt | Säule | Winkel | Score | Status | Ablage |
 |---|---|---|---|---|---|---|
-| 2026-08-17 | KINKO | Raum | 3×3-Messingraster, Sichtbeton, Streiflicht v. links, Sessel als Maßstab | 82/100 | ✅ Text + Spezifikation abgelegt, **Canva offen** (kein Master) | [Drive](https://drive.google.com/drive/folders/1QDarFYnKZSgJ2a8R44SLHgs8VkOdEBmD) |
+| 2026-08-17 | KINKO | Raum | `KINKO 35.jpg` (`9. KINKO / 2. S KINKO`) — 3×3-Messingraster auf Kalkwand, weiches gerichtetes Licht, drei Keramikgefäße als Rhythmus | 85/100 | ✅ Text + Layout-Vorlage abgelegt, **Canva offen** (kein Master) | [Drive](https://drive.google.com/drive/folders/1QDarFYnKZSgJ2a8R44SLHgs8VkOdEBmD) |
+| 2026-08-17 | KINKO (Erstfassung) | Raum | Shopify-CDN `kinko-brass-2` — Rendering | 82/100 | ↩︎ ersetzt durch echte Fotografie aus Drive | — |
 
 ## Verworfene Konzepte
 
