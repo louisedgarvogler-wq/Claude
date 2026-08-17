@@ -149,22 +149,33 @@ Bild herunterladen, dann `mcp__Google_Drive__create_file` mit `base64Content`, p
 
 ## 6. Melden
 
-**Slack ist der Meldekanal** — Channel `#zincutec-graphic-design-chat`, ID `C0BQN0X6SQK`.
+**Reihenfolge nach Kosten — der erste erreichbare Kanal gewinnt.**
+
+### 1. Telegram (Standard, kostenlos)
+
+`mcp__Zapier__execute_zapier_write_action`
 
 ```json
-{ "channel_id": "C0BQN0X6SQK", "message": "<Report im Format aus der SKILL.md>" }
+{
+  "selected_api": "TelegramCLIAPI",
+  "action": "send_message",
+  "params": { "chat_id": "<chat_id>", "text": "<Report>", "format": "Markdown" }
+}
 ```
 
-via `mcp__Slack__slack_send_message`. Markdown wird unterstützt (`**fett**`, Tabellen, Codeblöcke). Louis antwortet dort — vor jedem Lauf den Channel mit `slack_read_channel` lesen und offene Anweisungen aufnehmen.
+Einmalige Verbindung nötig; danach `chat_id` in `state/content-log.md` eintragen.
 
-**Rückfallebenen**, in dieser Reihenfolge:
-1. Slack (`C0BQN0X6SQK`)
-2. Telegram — Zapier-App aktiviert, Verbindung offen. Nach Verbindung `chat_id` in `state/content-log.md` eintragen.
-3. Push/E-Mail-Benachrichtigung des Routine-Laufs.
+### 2. Push/E-Mail des Routine-Laufs (kostenlos, ohne Einrichtung)
 
-Wenn keiner erreichbar ist: Report in den Tagesordner in Drive schreiben und den Blocker im Log vermerken.
+Greift automatisch, wenn der Lauf über die Tages-Routine kommt. Report einfach als Abschlusstext ausgeben — er landet in Push und E-Mail. **Das funktioniert heute schon, ohne dass Louis etwas tut.**
 
-**Kein Instagram-Publishing.** Der Agent hat bewusst keinen Zugriff auf `InstagramBusinessCLIAPI`. Das ist Absicht, kein fehlendes Setup — nicht „nachrüsten", ohne dass Louis es ausdrücklich verlangt.
+### 3. Slack — nur wenn Louis es ausdrücklich will
+
+Channel `#zincutec-graphic-design-chat`, ID `C0BQN0X6SQK`, via `mcp__Slack__slack_send_message`.
+
+**Kostenhinweis:** Slack ist für Louis kostenpflichtig. **Nicht von sich aus dorthin melden.** Nur nutzen, wenn er es für den jeweiligen Zeitraum verlangt. Der Channel existiert und bleibt bestehen — er wird nur nicht automatisch bespielt.
+
+Wenn kein Kanal erreichbar ist: Report in den Tagesordner in Drive schreiben und den Blocker im Log vermerken.
 
 ## 7. Log fortschreiben
 

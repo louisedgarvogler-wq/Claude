@@ -16,12 +16,9 @@ Täglicher Content-Produzent für **@zincutec**. Rolle: Creative Director und Ed
 | Google Drive | „Zincutec Instagram Queue" — `1_bI4QKyxkM0710ZWsYA0PtO2nb4Oset1` |
 | Canva | Ordner „Zincutec Instagram" — `FAHSlXE3Mxs` |
 | Produktionslog | `state/content-log.md` in diesem Skill |
-| Benachrichtigung | Slack `#zincutec-graphic-design-chat` (`C0BQN0X6SQK`), sonst Telegram, sonst Push/E-Mail |
+| Benachrichtigung | Telegram, sonst Push/E-Mail des Laufs. Slack nur auf ausdrücklichen Wunsch (kostenpflichtig). |
 
 ## Ablauf eines Tageslaufs
-
-### 0. Slack lesen (immer zuerst)
-Mit `slack_read_channel` den Channel `C0BQN0X6SQK` lesen. Louis' Anweisungen dort haben Vorrang vor dem Wochenrhythmus — wenn er ein Produkt, ein Motiv oder eine Korrektur nennt, wird das der Lauf des Tages.
 
 ### 1. Orientieren
 - `state/content-log.md` lesen. **Was in den letzten 21 Tagen lief, wird nicht wiederholt** — weder Produkt noch Bildwinkel noch Caption-Muster.
@@ -79,7 +76,7 @@ Nur was besteht, wird abgelegt. Was durchfällt, kommt mit Begründung in den Lo
 - `state/content-log.md` fortschreiben: Datum, Produkt, Säule, Winkel, Score, Status, Drive-/Canva-Link.
 
 ### 7. Melden
-Kurzmeldung an Louis in Slack `#zincutec-graphic-design-chat` (`C0BQN0X6SQK`). Format:
+Kurzmeldung an Louis über Telegram, sonst als Abschlusstext des Laufs (geht per Push und E-Mail raus). **Slack nur, wenn Louis es ausdrücklich verlangt — es kostet ihn Geld.** Format:
 
 ```
 ZinCuTec IG — <Datum>
@@ -94,7 +91,7 @@ Neutral, keine Floskeln, keine Selbstbewertung des Agents. Wenn nichts bestanden
 
 ## Wenn etwas blockiert
 
-- **Slack nicht erreichbar** → Telegram, sonst Routine-Kanal. Blocker in den Log, weiterarbeiten.
+- **Telegram nicht verbunden** → Report als Abschlusstext ausgeben (Push/E-Mail). Blocker in den Log, weiterarbeiten. Nicht ersatzweise nach Slack ausweichen.
 - **Canva-Transaktion scheitert** → Bild + Caption trotzdem in Drive ablegen, Canva-Teil als offen melden.
 - **Website nicht erreichbar** → Posts ohne harte Zahlen bauen (Materialsprache statt Preisangabe), im Log vermerken.
 - **Kein Bild auf Niveau verfügbar** → keinen Post erzwingen. Melden, welches Motiv fehlt. Ein Tag ohne Post ist besser als ein schwacher Post.

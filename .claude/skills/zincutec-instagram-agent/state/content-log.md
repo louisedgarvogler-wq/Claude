@@ -9,9 +9,9 @@ Regel: Was in den letzten 21 Tagen lief, wird nicht wiederholt — weder Produkt
 |---|---|
 | Drive-Queue | ✅ angelegt — `1_bI4QKyxkM0710ZWsYA0PtO2nb4Oset1` |
 | Canva-Ordner | ✅ angelegt — `FAHSlXE3Mxs` |
-| Tages-Routine | ✅ aktiv, 07:12 CEST |
-| Slack | ✅ `#zincutec-graphic-design-chat` — `C0BQN0X6SQK`. Primärer Meldekanal. Vor jedem Lauf mitlesen. |
-| Telegram | ⏳ Rückfallebene. Zapier-App aktiviert, Verbindung offen — Auth-Link einmalig bestätigen, danach `chat_id` hier eintragen |
+| Tages-Routine | ✅ aktiv, 07:12 CEST — Push/E-Mail-Meldung greift ohne weitere Einrichtung |
+| Slack | ⏸️ Channel `#zincutec-graphic-design-chat` (`C0BQN0X6SQK`) existiert, wird aber **nicht automatisch bespielt** — kostenpflichtig für Louis. Nur auf ausdrücklichen Wunsch. |
+| Telegram | ⏳ **Standard-Meldekanal, kostenlos.** Zapier-App aktiviert, Verbindung offen — Auth-Link einmalig bestätigen, danach `chat_id` hier eintragen |
 | **4:5-Master-Design** | ⛔ **fehlt — größter Blocker.** Louis muss einmalig ein Master von Hand bauen (Helvetica, echtes Logo). Danach dupliziert der Agent nur noch. Begründung in `references/design-system.md`. |
 | Routine-Connectors | ⚠️ Routine-Sessions erben keine Drive-/Canva-/Zapier-Tools (Organisationsbeschränkung). Der Tageslauf arbeitet dann im Degraded-Modus und legt im Repo ab. |
 | Instagram-Publishing | ⛔ bewusst nicht eingerichtet — Agent legt nur ab |
