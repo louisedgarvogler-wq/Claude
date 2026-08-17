@@ -82,6 +82,27 @@ Wie eine Magazinstrecke aufbauen, nicht als Bilderstapel:
 
 ---
 
+## Canvas KI-Generierung ist unbrauchbar — getestet
+
+**`generate-design` NICHT für ZinCuTec-Posts verwenden.** Am 2026-08-17 mit einem sehr präzisen Prompt getestet (Helvetica, `#f6f6f6`, keine Dekoration, nur das gelieferte Bild). Ergebnis, vier Seiten:
+
+| Verstoß | Befund |
+|---|---|
+| Falsche Schrift | Display-Serife (`fontRef=YAFMTwAmi5M`), nicht Helvetica — trotz expliziter Vorgabe |
+| Dekoration | Abgerundete Bildecken (`cornerRounding=23`), brauner Rahmen `#62442e`, Pfeil-Grafik |
+| **Erfundenes Logo** | Ein frei erfundenes ZINCUTEC-Bildzeichen (`mediaId=MAFbQ_ti1Go`) |
+| **Falsche Produkte** | Seite 2 zeigt einen erfundenen Messingschrank, Seite 3 einen Holztisch — beides kein ZinCuTec |
+| **Erfundene Telefonnummer** | Seite 4: „FOR INQUIRIES, CALL (12) 3456-7890" |
+| Sprachmischung | „Messing brüniert craftsmanship with a unique design aesthetic" — plus Superlativ |
+
+Einziger Treffer: der Hintergrund war korrekt `#f6f6f6`.
+
+Erfundene Logos, fremde Produkte und frei erfundene Kontaktdaten auf einem Marken-Asset sind Hard Rejects. Das Ergebnis liegt als **`DURCHGEFALLEN 2026-08-17 KINKO`** im Canva-Ordner — als Beleg, nicht zur Verwendung.
+
+**Konsequenz — der einzig gangbare Weg:** Louis baut **einmalig** ein 4:5-Master-Design von Hand (Helvetica, korrektes Logo, richtige Ränder). Danach arbeitet der Agent ausschließlich per `copy-design` + Bildtausch im bestehenden Rahmen. Das ist exakt Louis' dokumentierte Arbeitsweise — „duplizieren, nie neu bauen" — und umgeht zugleich die Schriftbeschränkung von `add_text`, weil die Schrift aus dem Master vererbt wird.
+
+Solange kein Master existiert: Bild und Textspezifikation in Drive ablegen, Canva-Schritt als offen melden. **Keinen KI-Entwurf als Ersatz ablegen.**
+
 ## Bauweise in Canva
 
 Louis' Regel „duplizieren statt neu bauen" gilt auch hier:

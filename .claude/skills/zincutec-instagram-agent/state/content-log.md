@@ -11,19 +11,22 @@ Regel: Was in den letzten 21 Tagen lief, wird nicht wiederholt — weder Produkt
 | Canva-Ordner | ✅ angelegt — `FAHSlXE3Mxs` |
 | Tages-Routine | ✅ aktiv, 07:12 CEST |
 | Telegram | ⏳ Zapier-App aktiviert, **Verbindung offen** — Louis muss den Auth-Link einmalig bestätigen, danach hier den `chat_id` eintragen |
+| **4:5-Master-Design** | ⛔ **fehlt — größter Blocker.** Louis muss einmalig ein Master von Hand bauen (Helvetica, echtes Logo). Danach dupliziert der Agent nur noch. Begründung in `references/design-system.md`. |
+| Routine-Connectors | ⚠️ Routine-Sessions erben keine Drive-/Canva-/Zapier-Tools (Organisationsbeschränkung). Der Tageslauf arbeitet dann im Degraded-Modus und legt im Repo ab. |
 | Instagram-Publishing | ⛔ bewusst nicht eingerichtet — Agent legt nur ab |
 
 ## Produzierte Posts
 
 | Datum | Produkt | Säule | Winkel | Score | Status | Ablage |
 |---|---|---|---|---|---|---|
-| _(noch keine Läufe)_ | | | | | | |
+| 2026-08-17 | KINKO | Raum | 3×3-Messingraster, Sichtbeton, Streiflicht v. links, Sessel als Maßstab | 82/100 | ✅ Text + Spezifikation abgelegt, **Canva offen** (kein Master) | [Drive](https://drive.google.com/drive/folders/1QDarFYnKZSgJ2a8R44SLHgs8VkOdEBmD) |
 
 ## Verworfene Konzepte
 
 | Datum | Produkt | Grund |
 |---|---|---|
-| _(noch keine)_ | | |
+| 2026-08-17 | KINKO (Canva-KI-Layout) | Canva `generate-design` durchgefallen: Serife statt Helvetica, erfundenes ZINCUTEC-Logo, zwei fremde Produkte, erfundene Telefonnummer, Sprachmischung. Beleg liegt als `DURCHGEFALLEN 2026-08-17 KINKO` im Canva-Ordner. |
+| 2026-08-17 | KINKO Edelstahl (`kinko-steel-3`) | Nicht verworfen, zurückgestellt: echte Fotografie mit exzellentem Streiflicht, aber terrakottafarbene Wand — wärmer als die Markenpalette. Für eigenen Post vormerken. |
 
 ## Produkt-Rotation
 
@@ -31,7 +34,7 @@ Damit sich der Feed nicht auf die Bestseller verengt. Nach jedem Einsatz Datum e
 
 | Produkt | Zuletzt |
 |---|---|
-| KINKO | — |
+| KINKO | 2026-08-17 |
 | ZEN DINING TABLE | — |
 | ZEN COFFEE TABLE | — |
 | ZEN CONSOLE | — |
