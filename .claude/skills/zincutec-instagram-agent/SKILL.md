@@ -25,6 +25,13 @@ Täglicher Content-Produzent für **@zincutec**. Rolle: Creative Director und Ed
 - `references/catalog.md` für den Produktbestand; Preise/Varianten **live** über `https://zincutec.eu/products/<handle>.json` gegenprüfen, nie aus der Referenz zitieren.
 - `references/content-system.md` für Säule und Format, die heute dran sind.
 
+### 1b. Umfeld analysieren (5–10 Minuten, jeder Lauf)
+Vollständiges Verfahren in `references/competitors.md`.
+- **Eigener Feed:** die letzten neun Posts im Log als Grid prüfen — Säulenverteilung, Wiederholungen, brachliegende Produkte.
+- **Wettbewerb:** zwei bis drei Accounts der Rotation, Frama mindestens einmal pro Woche. **Instagram-Profile sind unauthentifiziert nicht abrufbar** (getestet, liefert leere JS-Hülle) — Substanz kommt von den Marken-Websites, Journals und gezielter WebSearch.
+- **Höchstens eine Erkenntnis** fließt in die Posts des Tages ein. Mehr wird Imitation.
+- Vor jeder Übernahme die Abgrenzungsregel: *Wäre dieser Post ohne Logo und Produktnamen noch als ZinCuTec erkennbar?* Bei Nein: nicht übernehmen.
+
 ### 2. Konzipieren
 Zwei Posts pro Lauf: **ein Träger-Post** (Produkt/Detail/Raum) und **ein Zweitkonzept** aus einer anderen Säule. Für jeden:
 - Produkt + konkreter Bildwinkel (nicht „ein Foto von KINKO", sondern „KINKO Set 3, Streiflicht von links, Fokus auf die Kante wo Messing in Schatten kippt")
@@ -41,15 +48,19 @@ Bildquellen in dieser Reihenfolge:
 Bildwahl-Kriterien stehen in `references/quality-rubric.md`, Abschnitt „Bild". Ein schwaches Bild kippt den ganzen Post — lieber ein anderes Produkt wählen als ein mittelmäßiges Bild aufwerten wollen.
 
 ### 4. Bauen
+- **Zuerst die Skill `canva-design-style` lesen** — Louis' dokumentiertes Designsystem ist die Quelle der Wahrheit. `references/design-system.md` überträgt es nur auf die Instagram-Formate.
 - Canva-Design im Ordner `FAHSlXE3Mxs`, Format 4:5 (1080×1350) für Feed, 9:16 (1080×1920) für Story/Reel-Cover.
-- Visuelle Regeln: `references/brand-dna.md`. Kurzfassung: viel Weißraum, kein Text auf dem Produkt, Typo nur wenn sie etwas trägt.
+- Harte Konstanten: **nur Helvetica**, Hintergrund `#f6f6f6`/`#fafaf7`, Produktnamen ALL CAPS, Microline `TURNING METAL INTO ART.` oben rechts, deutsches Zahlenformat (`100 × 63 × 27,5 cm`), kursiv nur an einer Stelle, keinerlei Dekoration.
+- **Wirkt eine Fläche zu voll, wird ein Element gelöscht — nicht verkleinert.** Die Leere ist das Design.
+- Sobald ein erster Post steht, wird er zur Vorlage: duplizieren und Bild im bestehenden Rahmen tauschen, statt neu zu bauen.
 - Benennung: `YYYY-MM-DD_<PRODUKT>_<FORMAT>` — z. B. `2026-08-18_KINKO_4x5`.
 
 ### 5. Selbst prüfen (der eigentliche Wert dieses Agents)
 **Pflicht, nicht optional.** Vollständiges Verfahren in `references/quality-rubric.md`:
 - Erst die **Hard Rejects** durchgehen. Ein Treffer = Post fliegt raus, keine Reparatur, neu konzipieren.
 - Dann die **10 Kriterien** scoren. Unter 75/100 → überarbeiten. Zweimal unter 75 → verwerfen und Thema wechseln.
-- Dann den **Fremdblick-Pass**: den fertigen Post gegen die Referenzmarken lesen (`references/brand-dna.md`, „Benchmark"). Würde er in deren Feed auffallen — oder untergehen?
+- Dann den **Fremdblick-Pass**: den fertigen Post gegen die Referenzmarken lesen (`references/competitors.md`). Würde er neben Frama oder New Works auffallen — oder untergehen? Und: wäre er ohne Logo noch als ZinCuTec erkennbar?
+- Dann die **Layout-Prüffragen** aus `references/design-system.md` (Helvetica, Hintergrundton, Zahlenformat, Kursiv-Disziplin).
 - Faktencheck: Preise, Maße, Materialbezeichnungen, Lieferzeiten gegen zincutec.eu. **Keine erfundenen Zahlen.** Wo die Website nichts hergibt: „auf Anfrage".
 
 Nur was besteht, wird abgelegt. Was durchfällt, kommt mit Begründung in den Log — das ist Information, kein Scheitern.
@@ -82,8 +93,12 @@ Neutral, keine Floskeln, keine Selbstbewertung des Agents. Wenn nichts bestanden
 
 ## Referenzen
 
-- `references/brand-dna.md` — Stimme, Bildsprache, Positionierung, Benchmark-Marken, was ZinCuTec **nicht** ist
+- `references/brand-dna.md` — Stimme, Bildsprache, Positionierung, Substanzquellen, was ZinCuTec **nicht** ist
 - `references/quality-rubric.md` — Hard Rejects, 10-Kriterien-Score, Fremdblick-Pass
+- `references/competitors.md` — eigener Feed + 8 Wettbewerber, Analysemethode, Abgrenzungsregel
+- `references/design-system.md` — Instagram-Layouts nach Louis' Canva-Designsystem
 - `references/content-system.md` — Säulen, Formate, Caption-Architektur, Hashtag-Strategie, Wochenrhythmus
 - `references/catalog.md` — 27 Produkte mit Finishes, Preisspannen, Bildbestand
 - `references/pipeline.md` — konkrete Tool-Aufrufe für Drive, Canva, Telegram
+
+**Verwandte Skills:** `canva-design-style` (Louis' Designsystem — vor jedem Canva-Bau lesen), `zincutec-katalog-design-workflow` (gemessene Template-Geometrie, Canva-API-Fallstricke).

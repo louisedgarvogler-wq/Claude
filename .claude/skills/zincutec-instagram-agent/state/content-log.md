@@ -59,6 +59,21 @@ Damit sich der Feed nicht auf die Bestseller verengt. Nach jedem Einsatz Datum e
 | MONOLITH GOLDEN PEAK | — |
 | THE ROYAL GAME | — |
 
+## Wettbewerbs-Rotation
+
+Zwei bis drei Accounts pro Lauf, Frama mindestens wöchentlich. Instagram ist nicht abrufbar — Quelle ist Website/Journal/WebSearch (siehe `references/competitors.md`).
+
+| Account | Zuletzt geprüft | Befund | Übernommen? |
+|---|---|---|---|
+| `@framacph` (Frama) | — | | |
+| `@newworksdk` (New Works) | — | | |
+| `@louiseroecph` (Louise Roe) | — | | |
+| `@metallbude_official` (Metallbude) | — | | |
+| `@form.eisen` (form & eisen) | — | | |
+| `@postandbeamsystem` (Post + Beam) | — | | |
+| `@casestudios.de` (Case Studios) | — | | |
+| `@livindahome` (Livindahome) | — | | |
+
 ## Grid-Review
 
 Alle zwei Läufe: die letzten neun Posts als Grid prüfen (Rhythmus, Wiederholungen in Winkel/Produkttyp/Bildton). Ergebnis hier notieren.
