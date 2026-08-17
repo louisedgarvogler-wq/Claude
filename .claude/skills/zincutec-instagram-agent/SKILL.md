@@ -34,6 +34,8 @@ Vollständiges Verfahren in `references/competitors.md`.
 - Vor jeder Übernahme die Abgrenzungsregel: *Wäre dieser Post ohne Logo und Produktnamen noch als ZinCuTec erkennbar?* Bei Nein: nicht übernehmen.
 
 ### 2. Konzipieren
+**Produktwahl: Neues zuerst.** Shop-Tag `Neu` vor frischem Bildmaterial vor lange nicht Gezeigtem vor Bestsellern — vollständige Reihenfolge in `references/content-system.md`. Bildqualität schlägt Neuheit: ein Neuprodukt mit schwachem Material wird nicht erzwungen, das fehlende Motiv kommt stattdessen als Shooting-Ansage in den Report.
+
 Zwei Posts pro Lauf: **ein Träger-Post** (Produkt/Detail/Raum) und **ein Zweitkonzept** aus einer anderen Säule. Für jeden:
 - Produkt + konkreter Bildwinkel (nicht „ein Foto von KINKO", sondern „KINKO Set 3, Streiflicht von links, Fokus auf die Kante wo Messing in Schatten kippt")
 - Caption nach der Architektur in `references/content-system.md`

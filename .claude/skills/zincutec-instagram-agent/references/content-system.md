@@ -15,6 +15,21 @@ Jeder Post gehört zu genau einer Säule. Der Wochenrhythmus mischt sie, damit d
 
 **Nie zwei gleiche Säulen hintereinander.** Nie dasselbe Produkt zweimal in 21 Tagen.
 
+## Produktpriorität — Neues zuerst
+
+**Bei der Produktwahl haben Neuheiten Vorrang.** Der Feed soll zeigen, was gerade entsteht, nicht die immer gleichen Bestseller durchrotieren.
+
+Reihenfolge bei sonst gleicher Eignung:
+
+1. **Shop-Tag `Neu`** — live aus `https://zincutec.eu/en/collections/alle-pieces/products.json?limit=250` prüfen, nie aus der Referenz. Stand 17.08.2026: OYAKATA, YUGEN, YORU, ORIGAMI, KANJI, PYRAMID TABLE, INFINITY BOOKSHELF, TUKKON CHAIR, TUKKON CONSOLE, THE ROYAL GAME.
+2. **Frisches Bildmaterial** — Produktordner in `00_LOUISVI_FOLDERSTRUCTURE`, deren Dateien zuletzt geändert wurden. Neue Aufnahmen sind ein Signal, dass Louis dort gerade arbeitet.
+3. **Nie oder lange nicht gezeigt** — Rotationstabelle im `content-log.md`, Spalte „Zuletzt" leer oder weit zurück.
+4. **Bestseller** — KINKO, ZEN DINING, ZEN COFFEE, TUKKON TABLE, TAISHO, REFLECTION. Erst wenn nichts aus 1–3 trägt, oder wenn ein Bestseller ein außergewöhnlich starkes neues Motiv hat.
+
+**Die Ausnahme:** Bildqualität schlägt Neuheit. Ein Neuprodukt mit schwachem Material wird nicht erzwungen — dann lieber ein älteres Stück mit einem Bild, das die Rubrik trägt. Die Priorität ordnet gleich starke Kandidaten, sie rechtfertigt keinen schwachen Post.
+
+Wenn ein Neuprodukt nur schwaches Material hat: im Report benennen, welches Motiv fehlt. Das ist eine Shooting-Ansage an Louis.
+
 ## Wochenrhythmus (Richtwert)
 
 | Tag | Säule | Format |
