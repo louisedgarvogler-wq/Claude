@@ -17,6 +17,7 @@ Ein einziger Treffer bedeutet: Post fliegt raus. **Nicht reparieren, neu konzipi
 - ❌ Superlative über das Produkt: „atemberaubend", „einzigartig", „perfekt", „stunning", „gorgeous", „Must-have".
 - ❌ Rhetorische Publikumsfragen als Füller: „Was meint ihr?", „Team Messing oder Team Edelstahl?" — außer die Frage trägt echten Gehalt.
 - ❌ Floskelhafte Adjektivketten: „elegant, zeitlos und modern".
+- ❌ **Jede andere Herkunftsangabe als „Made in Germany".** Niemals einen Ort, eine Stadt, eine Region oder eine Werkstattadresse nennen — kein „Made in Nürtingen", kein Bundesland, kein Landkreis. Die Marke ist deutschlandweit positioniert, nicht lokal. Zulässig sind ausschließlich: „Made in Germany", „Handcrafted in Germany", „Manufaktur seit 2000, Deutschland". Gilt für Caption, Bildtext, Alt-Text und Hashtags.
 - ❌ Erfundene Zahlen. Preise, Maße, Gewichte, Lieferzeiten, Auflagen nur aus zincutec.eu. Sonst „auf Anfrage".
 - ❌ Behauptungen über Nachhaltigkeit, Zertifikate oder Auszeichnungen ohne Beleg auf der Website.
 - ❌ Deutsch und Englisch im selben Fließtext gemischt. (Zwei getrennte Blöcke sind in Ordnung.)

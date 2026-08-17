@@ -1,0 +1,282 @@
+<title>ZinCuTec Freigabe-Board</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+:root{
+  --ground:#f4f3f1; --panel:#fbfbfa; --edge:#dedbd6;
+  --ink:#191817; --ink-2:#5d5952; --ink-3:#8d877e;
+  --brass:#8a6636; --brass-soft:#c9a06a; --steel:#7c828a;
+  --pass:#4a6b45; --warn:#9a6b1f; --stop:#8c3b2e;
+  --pass-bg:#e7ede4; --warn-bg:#f6ecd8; --stop-bg:#f5e2dd;
+  --shadow:0 1px 2px rgba(25,24,23,.05);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#161514; --panel:#1e1d1b; --edge:#33312d;
+    --ink:#eeece8; --ink-2:#a8a29a; --ink-3:#78736b;
+    --brass:#c9a06a; --brass-soft:#8a6636; --steel:#98a0a8;
+    --pass:#9dbf95; --warn:#dcb268; --stop:#d99284;
+    --pass-bg:#232a21; --warn-bg:#2c2519; --stop-bg:#2e201d;
+    --shadow:0 1px 2px rgba(0,0,0,.3);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#161514; --panel:#1e1d1b; --edge:#33312d;
+  --ink:#eeece8; --ink-2:#a8a29a; --ink-3:#78736b;
+  --brass:#c9a06a; --brass-soft:#8a6636; --steel:#98a0a8;
+  --pass:#9dbf95; --warn:#dcb268; --stop:#d99284;
+  --pass-bg:#232a21; --warn-bg:#2c2519; --stop-bg:#2e201d;
+  --shadow:0 1px 2px rgba(0,0,0,.3);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font-family:Archivo,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size:15px; line-height:1.5; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px; margin:0 auto; padding:40px 28px 80px; display:flex; flex-direction:column; gap:38px}
+h1,h2,h3{margin:0; text-wrap:balance; font-weight:600; letter-spacing:-.015em}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace; font-variant-numeric:tabular-nums}
+.eyebrow{font-size:11px; letter-spacing:.13em; text-transform:uppercase; color:var(--ink-3); font-weight:500}
+
+/* Kopf */
+header{display:flex; flex-wrap:wrap; gap:20px; align-items:flex-end; justify-content:space-between;
+  border-bottom:1px solid var(--edge); padding-bottom:24px}
+.brandline{display:flex; align-items:baseline; gap:14px; flex-wrap:wrap}
+.mark{font-size:13px; letter-spacing:.3em; font-weight:600; color:var(--ink)}
+h1{font-size:clamp(28px,4.4vw,40px); line-height:1.08}
+.sub{color:var(--ink-2); font-size:14px; margin-top:8px; max-width:56ch}
+.stamp{text-align:right; font-size:12px; color:var(--ink-3); line-height:1.7}
+.stamp b{color:var(--ink-2); font-weight:500}
+
+/* Kennzahlen */
+.tiles{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:14px}
+.tile{background:var(--panel); border:1px solid var(--edge); border-radius:3px; padding:18px 18px 16px;
+  box-shadow:var(--shadow); display:flex; flex-direction:column; gap:6px; position:relative; overflow:hidden}
+.tile::before{content:""; position:absolute; inset:0 auto 0 0; width:2px; background:var(--edge)}
+.tile.is-good::before{background:var(--pass)} .tile.is-warn::before{background:var(--warn)} .tile.is-stop::before{background:var(--stop)}
+.tile .n{font-size:34px; font-weight:600; line-height:1; letter-spacing:-.02em}
+.tile .n small{font-size:15px; color:var(--ink-3); font-weight:400; letter-spacing:0}
+.tile .cap{font-size:12.5px; color:var(--ink-2)}
+
+/* Abschnitte */
+section{display:flex; flex-direction:column; gap:16px}
+.head{display:flex; align-items:baseline; justify-content:space-between; gap:16px; flex-wrap:wrap}
+h2{font-size:19px}
+.note{font-size:13px; color:var(--ink-3); max-width:62ch}
+
+/* Post-Karte */
+.post{background:var(--panel); border:1px solid var(--edge); border-radius:3px; box-shadow:var(--shadow);
+  display:grid; grid-template-columns:minmax(0,1fr) 208px; gap:0}
+@media(max-width:720px){.post{grid-template-columns:1fr}}
+.post .body{padding:22px 24px; display:flex; flex-direction:column; gap:14px; min-width:0}
+.post .side{border-left:1px solid var(--edge); padding:22px 20px; display:flex; flex-direction:column; gap:14px; background:var(--ground)}
+@media(max-width:720px){.post .side{border-left:0; border-top:1px solid var(--edge)}}
+.titlerow{display:flex; align-items:baseline; gap:12px; flex-wrap:wrap}
+.pname{font-size:23px; font-weight:600; letter-spacing:.01em}
+.pill{font-size:11px; letter-spacing:.06em; text-transform:uppercase; font-weight:500;
+  padding:3px 9px; border-radius:2px; border:1px solid transparent; white-space:nowrap}
+.pill.pass{background:var(--pass-bg); color:var(--pass); border-color:color-mix(in srgb,var(--pass) 30%,transparent)}
+.pill.warn{background:var(--warn-bg); color:var(--warn); border-color:color-mix(in srgb,var(--warn) 30%,transparent)}
+.pill.stop{background:var(--stop-bg); color:var(--stop); border-color:color-mix(in srgb,var(--stop) 30%,transparent)}
+.pill.plain{background:transparent; color:var(--ink-3); border-color:var(--edge)}
+.caption{border-left:2px solid var(--brass-soft); padding:2px 0 2px 16px; color:var(--ink); font-size:14.5px;
+  display:flex; flex-direction:column; gap:9px}
+.caption .lead{font-weight:500}
+.caption .fine{color:var(--ink-2); font-size:13.5px}
+.meta{display:flex; flex-wrap:wrap; gap:6px 8px; font-size:12px; color:var(--ink-3)}
+.meta code{font-family:"IBM Plex Mono",monospace; background:var(--ground); border:1px solid var(--edge);
+  padding:2px 6px; border-radius:2px; color:var(--ink-2); font-size:11.5px}
+
+/* Score */
+.score{display:flex; flex-direction:column; gap:5px}
+.score .val{font-size:30px; font-weight:600; line-height:1; letter-spacing:-.02em}
+.score .val small{font-size:14px; color:var(--ink-3); font-weight:400}
+.bar{height:4px; background:var(--edge); border-radius:2px; overflow:hidden}
+.bar i{display:block; height:100%; background:var(--pass)}
+.crit{display:flex; flex-direction:column; gap:5px; font-size:11.5px; color:var(--ink-2)}
+.crit div{display:flex; align-items:center; gap:8px; justify-content:space-between}
+.crit .cbar{flex:1; height:3px; background:var(--edge); border-radius:2px; overflow:hidden; margin:0 2px}
+.crit .cbar i{display:block; height:100%; background:var(--steel)}
+.crit .low .cbar i{background:var(--warn)}
+.crit b{font-weight:500; color:var(--ink-2); min-width:14px; text-align:right}
+
+/* Listen */
+.rows{display:flex; flex-direction:column; border:1px solid var(--edge); border-radius:3px; overflow:hidden; background:var(--panel)}
+.row{display:grid; grid-template-columns:132px minmax(0,1fr); gap:18px; padding:14px 18px; border-bottom:1px solid var(--edge); align-items:start}
+.row:last-child{border-bottom:0}
+@media(max-width:640px){.row{grid-template-columns:1fr; gap:6px}}
+.row .k{font-size:13px; font-weight:500; color:var(--ink)}
+.row .v{font-size:13.5px; color:var(--ink-2)}
+.blocker{border-left:2px solid var(--stop)}
+.blocker.mid{border-left-color:var(--warn)}
+
+/* Rotation */
+.rot{display:flex; flex-wrap:wrap; gap:6px}
+.chip{font-size:11.5px; padding:4px 9px; border:1px solid var(--edge); border-radius:2px;
+  color:var(--ink-3); background:var(--panel); white-space:nowrap}
+.chip.used{color:var(--brass); border-color:color-mix(in srgb,var(--brass) 40%,transparent);
+  background:color-mix(in srgb,var(--brass) 8%,var(--panel))}
+footer{border-top:1px solid var(--edge); padding-top:20px; font-size:12px; color:var(--ink-3); line-height:1.7}
+a{color:var(--brass); text-decoration:none; border-bottom:1px solid color-mix(in srgb,var(--brass) 35%,transparent)}
+a:hover{border-bottom-color:var(--brass)}
+a:focus-visible{outline:2px solid var(--brass); outline-offset:2px; border-radius:1px}
+</style>
+
+<div class="wrap">
+
+  <header>
+    <div>
+      <div class="brandline">
+        <span class="mark">ZINCUTEC</span>
+        <span class="eyebrow">Instagram · Freigabe</span>
+      </div>
+      <h1>Freigabe-Board</h1>
+      <p class="sub">Was der Agent produziert hat, wie es bewertet wurde und was noch auf dich wartet. Nichts geht live, bevor du es freigibst.</p>
+    </div>
+    <div class="stamp">
+      <div>Stand <b class="mono">17.08.2026, 23:20</b></div>
+      <div>Nächster Lauf <b class="mono">18.08., 07:12</b></div>
+      <div>Bestehensgrenze <b class="mono">75/100</b></div>
+    </div>
+  </header>
+
+  <div class="tiles">
+    <div class="tile is-good">
+      <span class="eyebrow">Freigabebereit</span>
+      <span class="n mono">1</span>
+      <span class="cap">KINKO, wartet auf dein Ja</span>
+    </div>
+    <div class="tile">
+      <span class="eyebrow">Ø Score</span>
+      <span class="n mono">85<small>/100</small></span>
+      <span class="cap">aus 1 bestandenen Entwurf</span>
+    </div>
+    <div class="tile is-warn">
+      <span class="eyebrow">Aussortiert</span>
+      <span class="n mono">2</span>
+      <span class="cap">1 durchgefallen, 1 zurückgestellt</span>
+    </div>
+    <div class="tile is-stop">
+      <span class="eyebrow">Blocker</span>
+      <span class="n mono">3</span>
+      <span class="cap">1 davon brauchst nur du</span>
+    </div>
+  </div>
+
+  <section>
+    <div class="head">
+      <h2>Wartet auf Freigabe</h2>
+      <span class="note">Bild, Text und Bewertung liegen im Drive-Tagesordner.</span>
+    </div>
+
+    <article class="post">
+      <div class="body">
+        <div class="titlerow">
+          <span class="pname">KINKO</span>
+          <span class="pill plain">Säule: Raum</span>
+          <span class="pill plain">4:5</span>
+          <span class="pill warn">Canva offen</span>
+        </div>
+
+        <div class="caption">
+          <span class="lead">Neun Platten, eine Achse. Der Rest ist Wand.</span>
+          <span class="fine">KINKO wächst horizontal, ohne seine Struktur zu verlieren. Jedes Element wird auf den vorhandenen Raum abgestimmt — die gebürstete Oberfläche behält dabei die industrielle Seele des Materials.</span>
+          <span class="fine">KINKO — Set 3, Messing brüniert.<br>Manufaktur seit 2000, Deutschland.</span>
+        </div>
+
+        <div class="meta">
+          <code>KINKO 35.jpg</code>
+          <span>aus</span>
+          <code>9. KINKO / 2. S KINKO</code>
+          <span>· echte Fotografie, weiches gerichtetes Licht, Patinaverläufe auf allen neun Platten</span>
+        </div>
+        <div class="meta">
+          <span>15 Hashtags · Zeitfenster <b>Di 18:30</b> · <a href="https://drive.google.com/drive/folders/1QDarFYnKZSgJ2a8R44SLHgs8VkOdEBmD">Drive-Ordner</a></span>
+        </div>
+      </div>
+
+      <div class="side">
+        <div class="score">
+          <span class="eyebrow">Score</span>
+          <span class="val mono">85<small>/100</small></span>
+          <div class="bar"><i style="width:85%"></i></div>
+        </div>
+        <div class="crit">
+          <div><span>Materialwahrheit</span><span class="cbar"><i style="width:90%"></i></span><b class="mono">9</b></div>
+          <div><span>Licht</span><span class="cbar"><i style="width:90%"></i></span><b class="mono">9</b></div>
+          <div><span>Komposition</span><span class="cbar"><i style="width:90%"></i></span><b class="mono">9</b></div>
+          <div><span>Eigenständigkeit</span><span class="cbar"><i style="width:90%"></i></span><b class="mono">9</b></div>
+          <div class="low"><span>Stopping Power</span><span class="cbar"><i style="width:80%"></i></span><b class="mono">8</b></div>
+          <div class="low"><span>Markenstimme</span><span class="cbar"><i style="width:80%"></i></span><b class="mono">8</b></div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section>
+    <div class="head">
+      <h2>Aussortiert</h2>
+      <span class="note">Warum etwas nicht durchkam, ist genauso Information wie ein bestandener Post.</span>
+    </div>
+    <div class="rows">
+      <div class="row">
+        <div class="k">Canva-KI-Layout<br><span class="pill stop" style="margin-top:5px;display:inline-block">durchgefallen</span></div>
+        <div class="v">Serife statt Helvetica, abgerundete Bildecken, ein <b>erfundenes ZINCUTEC-Logo</b>, zwei Produkte die es bei euch nicht gibt, und eine <b>frei erfundene Telefonnummer</b> auf einem Marken-Asset. Liegt als <code style="font-family:'IBM Plex Mono',monospace;font-size:11.5px">DURCHGEFALLEN</code> im Canva-Ordner. Canvas KI-Generierung wird für ZinCuTec nicht mehr verwendet.</div>
+      </div>
+      <div class="row">
+        <div class="k">KINKO Edelstahl<br><span class="pill warn" style="margin-top:5px;display:inline-block">zurückgestellt</span></div>
+        <div class="v">Echte Fotografie mit exzellentem Streiflicht, aber terrakottafarbene Wand — wärmer als die Markenpalette. Für einen eigenen Post vorgemerkt, nicht verworfen.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="head">
+      <h2>Blocker</h2>
+      <span class="note">Der erste ist der einzige, den nur du lösen kannst.</span>
+    </div>
+    <div class="rows">
+      <div class="row blocker">
+        <div class="k">4:5-Master in Canva</div>
+        <div class="v"><b>Braucht dich.</b> Bau einmal ein Master-Design von Hand — echte Helvetica, echtes Logo, richtige Ränder. Danach dupliziert der Agent nur noch und tauscht Bild und Text, genau wie in deinem Katalog-Workflow. Die Layout-Vorlage dafür hast du im Chat. Ohne Master kann der Agent Canva nicht bedienen, weil <code style="font-family:'IBM Plex Mono',monospace;font-size:11.5px">add_text</code> die Schriftfamilie nicht setzen kann.</div>
+      </div>
+      <div class="row blocker mid">
+        <div class="k">Bilder nach Canva</div>
+        <div class="v">Canva kann Drive-Dateien nicht selbst laden — dafür bräuchte es eine öffentliche URL. Der Agent wählt und begründet das Bild und nennt dir Ordner und Dateinamen; das Hineinziehen bleibt ein Handgriff bei dir.</div>
+      </div>
+      <div class="row blocker mid">
+        <div class="k">Connectors im Tageslauf</div>
+        <div class="v">Automatische Läufe erben derzeit keine Drive-, Canva- und Zapier-Rechte. Der Agent arbeitet dann im Sparmodus: volle Konzepte samt Score landen im Repo statt in Drive und Canva. Legst du die Routine stattdessen über die claude.ai-Oberfläche an, hat sie die Rechte.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="head">
+      <h2>Produkt-Rotation</h2>
+      <span class="note">Verhindert, dass der Feed auf die Bestseller zusammenschrumpft. Verwendet in den letzten 21 Tagen ist gesperrt.</span>
+    </div>
+    <div class="rot">
+      <span class="chip used">KINKO · 17.08.</span>
+      <span class="chip">ZEN DINING TABLE</span><span class="chip">ZEN COFFEE TABLE</span><span class="chip">ZEN CONSOLE</span>
+      <span class="chip">ZEN BENCH</span><span class="chip">TUKKON TABLE</span><span class="chip">TUKKON CHAIR</span>
+      <span class="chip">TUKKON CONSOLE</span><span class="chip">TAISHO</span><span class="chip">YUGEN</span>
+      <span class="chip">YORU</span><span class="chip">RYU</span><span class="chip">JIKU</span><span class="chip">CHOWA</span>
+      <span class="chip">ORIGAMI</span><span class="chip">SATORI</span><span class="chip">SAMURAI</span><span class="chip">OYAKATA</span>
+      <span class="chip">PYRAMID TABLE</span><span class="chip">INFINITY BOOKSHELF</span><span class="chip">SPHERE</span>
+      <span class="chip">ELYSIAN</span><span class="chip">KANJI</span><span class="chip">REFLECTION</span>
+      <span class="chip">COSMOS</span><span class="chip">MONOLITH GOLDEN PEAK</span><span class="chip">THE ROYAL GAME</span>
+    </div>
+  </section>
+
+  <footer>
+    Der Agent veröffentlicht nie selbst auf Instagram — er legt ab und meldet.
+    Bewertet wird gegen Hard Rejects, zehn Kriterien und einen Fremdblick-Pass gegen Frama, New Works und Metallbude.
+    Ein Tag ohne Post ist ein gültiges Ergebnis, wenn der Grund genannt ist.
+  </footer>
+
+</div>

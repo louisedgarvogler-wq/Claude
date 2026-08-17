@@ -77,4 +77,5 @@ Wenn eine Caption Gehalt braucht, kommt er aus einer dieser Quellen — nie aus 
 3. **Entwurfsentscheidung** — warum drei Beine statt vier, warum diese Kantenstärke
 4. **Namensherkunft** — YUGEN, SATORI, CHOWA tragen Bedeutung, die den Entwurf erklärt
 5. **Maßstab und Gewicht** — konkrete Zahlen von der Website, wenn vorhanden
-6. **Herkunft** — Manufaktur, Deutschland, seit 2000, Losgröße
+6. **Herkunft** — Manufaktur, Deutschland, seit 2000, Losgröße.
+   **Immer „Made in Germany", nie ein Ort.** Kein Nürtingen, keine Stadt, keine Region, keine Werkstattadresse — auch dann nicht, wenn es stimmt. Die Marke steht für deutsche Fertigung als Ganzes; eine Ortsangabe verengt sie auf einen Handwerksbetrieb. Erlaubte Formeln: „Made in Germany", „Handcrafted in Germany", „Manufaktur seit 2000, Deutschland".

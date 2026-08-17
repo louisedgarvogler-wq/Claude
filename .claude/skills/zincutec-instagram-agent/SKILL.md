@@ -21,6 +21,7 @@ Täglicher Content-Produzent für **@zincutec**. Rolle: Creative Director und Ed
 ## Ablauf eines Tageslaufs
 
 ### 1. Orientieren
+- `state/learnings.md` lesen — das Langzeitgedächtnis. Was dort steht, gilt für diesen Lauf.
 - `state/content-log.md` lesen. **Was in den letzten 21 Tagen lief, wird nicht wiederholt** — weder Produkt noch Bildwinkel noch Caption-Muster.
 - `references/catalog.md` für den Produktbestand; Preise/Varianten **live** über `https://zincutec.eu/products/<handle>.json` gegenprüfen, nie aus der Referenz zitieren.
 - `references/content-system.md` für Säule und Format, die heute dran sind.
@@ -66,14 +67,35 @@ Bildwahl-Kriterien stehen in `references/quality-rubric.md`, Abschnitt „Bild".
 - Dann die **10 Kriterien** scoren. Unter 75/100 → überarbeiten. Zweimal unter 75 → verwerfen und Thema wechseln.
 - Dann den **Fremdblick-Pass**: den fertigen Post gegen die Referenzmarken lesen (`references/competitors.md`). Würde er neben Frama oder New Works auffallen — oder untergehen? Und: wäre er ohne Logo noch als ZinCuTec erkennbar?
 - Dann die **Layout-Prüffragen** aus `references/design-system.md` (Helvetica, Hintergrundton, Zahlenformat, Kursiv-Disziplin).
+- **Herkunft: immer „Made in Germany", niemals ein Ort.** Kein Nürtingen, keine Stadt, keine Region — auch nicht, wenn es zutrifft. Gilt für Caption, Bildtext und Hashtags.
 - Faktencheck: Preise, Maße, Materialbezeichnungen, Lieferzeiten gegen zincutec.eu. **Keine erfundenen Zahlen.** Wo die Website nichts hergibt: „auf Anfrage".
 
 Nur was besteht, wird abgelegt. Was durchfällt, kommt mit Begründung in den Log — das ist Information, kein Scheitern.
 
 ### 6. Ablegen
-- Drive: Tagesunterordner `YYYY-MM-DD` in der Queue. Darin pro Post das Bild plus `<PRODUKT>_caption.txt` mit Caption, Hashtags, Zeitfenster, Score und den offenen Punkten.
-- Canva: Design im Ordner, Titel nach Namensschema.
-- `state/content-log.md` fortschreiben: Datum, Produkt, Säule, Winkel, Score, Status, Drive-/Canva-Link.
+**Ein Post = ein Ordner, in Drive und Canva unter identischem Namen.** Vollständige Struktur in `references/ablage.md`.
+
+- Name: `YYYY-MM-DD_PRODUKT_SAEULE_FORMAT` — z. B. `2026-08-18_ZEN-COFFEE-TABLE_DETAIL_4x5`. Keine Umlaute, keine Sonderzeichen.
+- Drive: Ordner in `01_FREIGABE_OFFEN`, darin vier nummerierte Dateien (`01_BILD`, `02_CAPTION`, `03_BEWERTUNG`, `04_LAYOUT_VORSCHAU`).
+- Canva: Kopie vom Master aus `00_MASTER`, umbenannt, verschoben nach `01_FREIGABE_OFFEN`. **Nie im Master arbeiten.**
+- Aussortiertes kommt nach `09_AUSSORTIERT` mit `00_GRUND.txt` — sonst geht die Begründung verloren.
+- Am Ende die fünf Prüffragen aus `ablage.md` durchgehen. Abweichung sofort korrigieren.
+- `state/content-log.md` fortschreiben: Datum, Produkt, Säule, Winkel, Score, Status, Ordnername.
+
+### 6b. Lernen (macht den Agent über die Zeit besser)
+`state/learnings.md` fortschreiben. Drei Fragen, ehrlich beantwortet:
+1. Was hat überrascht?
+2. Was hat Louis korrigiert — und was heißt das?
+3. Was mache ich beim nächsten Mal konkret anders?
+
+**Tritt ein Muster dreimal auf, wird es zur Regel** und wandert in die zuständige Referenzdatei (Zuordnungstabelle in `learnings.md`). Die Rubrik ist ausdrücklich änderbar — sie ist die beste bisherige Fassung, kein Gesetz. Änderungen im Commit begründen.
+
+Drei Läufe ohne neue Erkenntnis heißen: es wird zu oberflächlich geprüft.
+
+### 6c. Dashboard aktualisieren
+`dashboard/index.html` aus dem aktuellen Stand neu erzeugen und mit dem Artifact-Tool **unter derselben URL** neu veröffentlichen:
+`https://claude.ai/code/artifact/4fb94ec3-1588-4424-8266-0c6fd4df1bf5`
+(`url`-Parameter mitgeben, sonst entsteht ein zweites Board.) Das ist Louis' fester Anlaufpunkt — er soll nie in Chats nach dem Stand suchen müssen.
 
 ### 7. Melden
 Kurzmeldung an Louis über Telegram, sonst als Abschlusstext des Laufs (geht per Push und E-Mail raus). **Slack nur, wenn Louis es ausdrücklich verlangt — es kostet ihn Geld.** Format:
@@ -104,7 +126,10 @@ Neutral, keine Floskeln, keine Selbstbewertung des Agents. Wenn nichts bestanden
 - `references/design-system.md` — Instagram-Layouts nach Louis' Canva-Designsystem
 - `references/content-system.md` — Säulen, Formate, Caption-Architektur, Hashtag-Strategie, Wochenrhythmus
 - `references/catalog.md` — 27 Produkte mit Finishes, Preisspannen, Bildbestand
-- `references/pipeline.md` — Bildquellen mit Ordner-IDs, konkrete Tool-Aufrufe für Drive, Canva, Slack
+- `references/ablage.md` — Ordnerstruktur und Benennung in Drive und Canva
+- `references/pipeline.md` — Bildquellen mit Ordner-IDs, konkrete Tool-Aufrufe für Drive, Canva, Meldung
+- `state/learnings.md` — Langzeitgedächtnis; vor jedem Lauf lesen, nach jedem Lauf schreiben
+- `dashboard/index.html` — Freigabe-Board, täglich unter derselben URL neu veröffentlichen
 - `tools/layout_preview.py` — erzeugt eine 1080×1350-Layoutvorschau aus einem Bild; nützlich, um eine Bildwahl zu prüfen, bevor Louis sie in Canva baut
 
 **Verwandte Skills:** `canva-design-style` (Louis' Designsystem — vor jedem Canva-Bau lesen), `zincutec-katalog-design-workflow` (gemessene Template-Geometrie, Canva-API-Fallstricke).
